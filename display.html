@@ -9,7 +9,7 @@
   </head>
   <body>
     <header class="w-full bg-gray-800">
-      <nav class="flex justify-between w-3/4 mx-auto py-7">
+      <nav class="flex justify-between w-full xl:w-3/4 mx-auto py-7 px-6 xl:px-0">
           <div class="branding">
               <a href="index.html" class="brand-logo">Contact Management</a>
           </div>
@@ -19,122 +19,128 @@
             <span class="bar"></span>
           </div>
           <div class="branding navbar-links"> 
-              <ul class="flex w-64 justify-between items-center">
-                  <li><a href="profile.html" class="hover:bg-indigo-900">My Profile</a></li>
-                  <li><a href="logout.php" class="hover:bg-indigo-900">Log out</a></li>
+              <ul class="flex items-center">
+                  <li><a href="profile.html" class="hover:bg-indigo-900 mx-3">My Profile</a></li>
+                  <li><a href="logout.php" class="hover:bg-indigo-900 mx-3">Log out</a></li>
               </ul>
           </div>
       </nav>
   </header>
-    <div class="overflow-auto w-full flex justify-center items-center h-3/6">
-      <table class="w-9/12">
-        <thead class="border-b w-full">
-          <tr>
-            <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left">
-              #
-            </th>
-            <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
-              Full Name
-            </th>
-            <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
-              Email Adresse
-            </th>
-            <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
-              Phone Number
-            </th>
-            <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
-              City
-            </th>
-            <th scope="col" class="text-sm text-center font-medium text-gray-400 px-6 py-4 whitespace-nowrap">
-              Action
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              Jacob
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              Thornton
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              @fat
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              DC
-            </td>
-            <td class="flex justify-around w-full">
-              <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
-              <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
-            </td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              Jacob
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              Thornton
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              @fat
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              DC
-            </td>
-            <td class="flex justify-around w-full">
-              <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
-              <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
-            </td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              Jacob
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              Thornton
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              @fat
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              DC
-            </td>
-            <td class="flex justify-around w-full">
-              <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
-              <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
-            </td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              Jacob
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              Thornton
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              @fat
-            </td>
-            <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
-              DC
-            </td>
-            <td class="flex justify-around w-full">
-              <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
-              <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="w-full flex flex-col justify-center items-center h-3/6">
+      <div class="w-full xl:w-9/12 my-2 px-3 py-2 flex justify-between items-center rounded-lg addSection">
+        <h1 class="text-xl font-medium text-teal-100">Contacts List</h1>
+        <button class="bg-blue-400 p-2 rounded font-medium text-gray-100">add contact</button>
+      </div>
+      <div class="w-full xl:w-9/12 overflow-auto mx-6 rounded-lg table-shadow">
+        <table class="w-full ">
+          <thead class="border-b w-full">
+            <tr>
+              <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left">
+                #
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
+                Full Name
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
+                Email Adresse
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
+                Phone Number
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
+                City
+              </th>
+              <th scope="col" class="text-sm text-center font-medium text-gray-400 px-6 py-4 whitespace-nowrap">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                Jacob
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                Thornton
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                @fat
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                DC
+              </td>
+              <td class="flex justify-around w-full">
+                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
+                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                Jacob
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                Thornton
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                @fat
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                DC
+              </td>
+              <td class="flex justify-around w-full">
+                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
+                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                Jacob
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                Thornton
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                @fat
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                DC
+              </td>
+              <td class="flex justify-around w-full">
+                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
+                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                Jacob
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                Thornton
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                @fat
+              </td>
+              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+                DC
+              </td>
+              <td class="flex justify-around w-full">
+                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
+                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <script>
       const toggleButton = document.getElementsByClassName('toggle-button')[0]

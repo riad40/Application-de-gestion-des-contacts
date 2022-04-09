@@ -9,6 +9,11 @@ body {
     background-color: rgb(37, 39, 48);
     height: 100vh;
 }
+
+nav .branding .brand-logo {
+    font-size: 25px;
+}
+
 nav .branding a {
     color: beige;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
@@ -21,6 +26,10 @@ table thead,
 table tbody tr {
     background: #44464b !important;
     border-bottom: 2px solid #666666;
+}
+
+.addSection {
+    background-color: #434447;
 }
 
 .toggle-button {
@@ -39,6 +48,11 @@ table tbody tr {
     width: 100%;
     background-color: white;
     border-radius: 10px;
+}
+
+.table-shadow, 
+.addSection {
+    box-shadow: rgb(95 96 97 / 20%) 0px 0px 20px 5px;
 }
 
 @media (max-width: 670px) {
