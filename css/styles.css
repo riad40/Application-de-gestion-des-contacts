@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-image: url('../images/a.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+nav .branding a {
+    color: beige;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-weight: bold;
+    font-size: x-large;
+}
+
+ul li:nth-child(odd) a {
+    text-decoration: none;
+    color: beige;
+    font-weight: 500;
+    font-size: 20px;
+    border: 2px solid rgb(116, 117, 187);
+    padding: 5px 20px 10px;
+    border-radius: 10px;
+}
