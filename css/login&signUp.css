@@ -13,6 +13,9 @@ body {
 .login {
    background-color: #202442; 
    border-radius: 30px;
+   width: 500px;
+   min-width: 300px;
+   margin: 0 20px;
 }
 
 h1 {
@@ -20,7 +23,8 @@ h1 {
 }
 
 .login form input[type="email"],
-.login form input[type="password"] {
+.login form input[type="password"],
+.login form input[type="text"] {
     background-color: #303246;
     border-radius: 10px;
     outline: none;
