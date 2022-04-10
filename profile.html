@@ -3,13 +3,70 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>My profile</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>My Profile</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <header class="w-full bg-gray-800">
+      <nav class="flex justify-between w-full xl:w-3/4 mx-auto py-7 px-6 xl:px-0">
+          <div class="branding">
+              <a href="index.html" class="brand-logo">Contact Management</a>
+          </div>
+          <div class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <div class="branding navbar-links"> 
+              <ul class="flex items-center">
+                  <li><a href="display.html" class="hover:bg-indigo-900 mx-3">Contacts List</a></li>
+                  <li><a href="logout.php" class="hover:bg-indigo-900 mx-3">Log out</a></li>
+              </ul>
+          </div>
+      </nav>
+  </header>
+  <div class="wrapper flex justify-center items-center h-2/4">
+    <div class="flex w-full mx-5 xl:mx-0 xl:w-2/4 overflow-auto">
+      <div class="left w-2/5 px-4 py-9 text-center rounded-tl rounded-bl">
+      <img src="./images/profile.jpg" alt="user" width="150" class="rounded mb-4 mx-auto">
+      <h4 class="mb-4 text-gray-300 font-medium text-xl">User full name</h4>
+      <p class="text-xl font-bold text-gray-200 tracking-widest">User</p>
+      </div>
+      <div class="right w-3/5 px-7 py-5 rounded-tr rounded-br">
+        <div class="info mb-5">
+          <h3 class="mb-4 pb-2 text-gray-700 text-2xl font-medium uppercase tracking-widest">Information</h3>
+          <div class="info_data flex justify-between">
+            <div class="data w-2/4">
+              <h4 class="mb-3 text-xl font-bold">Email</h4>
+              <p class="mb-3 text-sm font-medium">example@gmail.com</p>
+            </div>
+            <div class="data w-2/4">
+              <h4 class="mb-3 text-xl font-bold">Phone</h4>
+              <p class="mb-3 text-sm font-medium">0001-213-998761</p>
+            </div>
+          </div>
+          <div class="info_data flex justify-between">
+            <div class="data w-2/4">
+              <h4 class="mb-3 text-xl font-bold">City</h4>
+              <p class="mb-3 text-sm font-medium">NewYork</p>
+            </div>
+            <div class="data w-2/4">
+              <h4 class="mb-3 text-xl font-bold">Date of Birth</h4>
+              <p class="mb-3 text-sm font-medium">00-00-0000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <script>
+    const toggleButton = document.getElementsByClassName('toggle-button')[0]
+    const navbarLinks = document.getElementsByClassName('navbar-links')[0]
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    toggleButton.addEventListener('click', () => {
+      navbarLinks.classList.toggle('active')
+    })
+  </script>
+</body>
 </html>
