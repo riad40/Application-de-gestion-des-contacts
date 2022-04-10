@@ -69,4 +69,7 @@ label {
     color: rgb(138, 138, 138);
 }
 
+.validate {
+    border: 2px solid red;
+}
 
