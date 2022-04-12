@@ -8,26 +8,32 @@
     <title>Contact Managemant</title>
   </head>
   <body>
+
+    <!-- IDEA : header & navbar  -->
+
     <header class="w-full bg-gray-800">
-        <nav class="flex justify-between w-3/4 mx-auto py-7">
-            <div class="branding">
-                <a href="index.html" class="brand-logo">Contact Management</a>
-            </div>
-            <div> 
-                <ul class="flex w-32 justify-end items-center">
-                    <li><a href="signIn.html" class="hover:bg-indigo-900">Log In</a></li>
-                </ul>
-            </div>
+        <nav class="flex flex-col sm:flex-row sm:justify-between items-center w-3/4 mx-auto py-5">
+          <a href="index.html" class="brand-logo">Contact Management</a>
+          <a href="signIn.html" class="login my-3 sm:my-0">Log In</a>
         </nav>
     </header>
+
+    <!-- IDEA : main section  -->
+
     <section class="flex justify-center items-center h-4/5 w-full">
-      <div class="w-2/5">
-        <h1 class="text-white py-5 text-5xl text-center dark:text-white">Contact Managemant System</h1>
-        <p class="text-center text-stone-200 text-xl py-5">Welcome ! The contact management system you need to easily create and organize your contacts. you can get every contact details and do some changes on it or delete it. <span class="font-semibold text-white">Get Started now</span></p>
-        <ul class="flex w-40 justify-center items-center mx-auto py-4">
-          <li><a href="signUp.html" class="bg-sky-900 text-white font-semibold h-12 px-6 rounded-lg w-full sm:w-auto">Get Strated</a></li>
-      </ul>
+      <div class="w-full mx-8 sm:w-1/2">
+        <h1 class="text-white py-5 text-5xl text-center dark:text-white">
+          Contact Managemant System
+        </h1>
+        <p class="text-center text-stone-200 text-xl py-5">
+          Welcome ! The contact management system you need to easily create and organize your contacts. you can get every contact details and do some changes on it or delete it. 
+          <span class="font-semibold text-white">Get Started now</span>
+        </p>
+        <div class="flex justify-center">
+          <a href="signUp.html" class="login">Get Started</a>
+        </div>
       </div>
     </section>
+
   </body>
 </html>

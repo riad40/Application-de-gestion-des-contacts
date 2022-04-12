@@ -3,152 +3,142 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/display.css">
+    <link rel="stylesheet" href="css/display&profile.css">
+    <script src="js/js styling/displayStyle.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Dsiplay Contacts</title>
   </head>
   <body>
+
+    <!-- IDEA : header & navbar  -->
+
     <header class="w-full bg-gray-800">
-      <nav class="flex justify-between w-full xl:w-3/4 mx-auto py-7 px-6 xl:px-0">
-          <div class="branding">
-              <a href="index.html" class="brand-logo">Contact Management</a>
-          </div>
-          <div class="toggle-button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-          <div class="branding navbar-links"> 
-              <ul class="flex items-center">
-                  <li><a href="profile.html" class="hover:bg-indigo-900 mx-3">My Profile</a></li>
-                  <li><a href="logout.php" class="hover:bg-indigo-900 mx-3">Log out</a></li>
-              </ul>
+      <nav class="flex flex-col md:flex-row justify-between items-center w-full xl:w-3/4 mx-auto py-5 px-6 xl:px-0">
+          <a href="index.html" class="brand-logo">Contact Management</a>
+          <div class="flex items-center my-4 md:my-4"> 
+            <a href="profile.html" class="mx-3 nav-links">My Profile</a>
+            <a href="logout.php" class="mx-3 nav-links">Log out</a>
           </div>
       </nav>
-  </header>
-    <div class="w-full flex flex-col justify-center items-center h-3/6">
-      <div class="w-full xl:w-9/12 my-2 px-3 py-2 flex justify-between items-center rounded-lg addSection">
-        <h1 class="text-xl font-medium text-teal-100">Contacts List</h1>
-        <button class="bg-blue-400 p-2 rounded font-medium text-gray-100">add contact</button>
+    </header> 
+
+    <!-- IDEA : main section  -->
+
+    <section class="main-section">
+      <div class="addSection">
+        <h1 class="top-h1">Contacts List</h1>
+        <button class="top-button">add contact</button>
       </div>
-      <div class="w-full xl:w-9/12 overflow-auto mx-6 rounded-lg table-shadow">
-        <table class="w-full ">
+      <div class="my-bottom">
+        <table class="w-full">
           <thead class="border-b w-full">
             <tr>
-              <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left">
+              <th scope="col" class="th-1">
                 #
               </th>
-              <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
+              <th scope="col" class="ths">
                 Full Name
               </th>
-              <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
+              <th scope="col" class="ths">
                 Email Adresse
               </th>
-              <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
+              <th scope="col" class="ths">
                 Phone Number
               </th>
-              <th scope="col" class="text-sm font-medium text-gray-400 px-6 py-4 text-left whitespace-nowrap">
+              <th scope="col" class="ths">
                 City
               </th>
-              <th scope="col" class="text-sm text-center font-medium text-gray-400 px-6 py-4 whitespace-nowrap">
+              <th scope="col" class="last-th">
                 Action
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="td-1">1</td>
+              <td class="tds">
                 Jacob
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 Thornton
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 @fat
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 DC
               </td>
-              <td class="flex justify-around w-full">
-                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
-                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
+              <td class="tdLinks">
+                <div class="ediel">Edit</div>
+                <div class="ediel">Delete</div>
               </td>
             </tr>
           </tbody>
           <tbody>
             <tr>
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="td-1">1</td>
+              <td class="tds">
                 Jacob
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 Thornton
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 @fat
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 DC
               </td>
-              <td class="flex justify-around w-full">
-                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
-                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
+              <td class="tdLinks">
+                <div class="ediel">Edit</div>
+                <div class="ediel">Delete</div>
               </td>
             </tr>
           </tbody>
           <tbody>
             <tr>
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="td-1">1</td>
+              <td class="tds">
                 Jacob
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 Thornton
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 @fat
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 DC
               </td>
-              <td class="flex justify-around w-full">
-                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
-                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
+              <td class="tdLinks">
+                <div class="ediel">Edit</div>
+                <div class="ediel">Delete</div>
               </td>
             </tr>
           </tbody>
           <tbody>
             <tr>
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">1</td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="td-1">1</td>
+              <td class="tds">
                 Jacob
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 Thornton
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 @fat
               </td>
-              <td class="text-sm text-gray-200 px-6 py-4 whitespace-nowrap">
+              <td class="tds">
                 DC
               </td>
-              <td class="flex justify-around w-full">
-                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Edit</div>
-                <div class="text-base text-blue-300 cursor-pointer p-2 m-2 whitespace-nowrap">Delete</div>
+              <td class="tdLinks">
+                <div class="ediel">Edit</div>
+                <div class="ediel">Delete</div>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
-    <script>
-      const toggleButton = document.getElementsByClassName('toggle-button')[0]
-      const navbarLinks = document.getElementsByClassName('navbar-links')[0]
-
-      toggleButton.addEventListener('click', () => {
-        navbarLinks.classList.toggle('active')
-      })
-    </script>
+    </section>
   </body>
 </html>

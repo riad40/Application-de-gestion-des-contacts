@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style: none;
 }
 
 body {
@@ -14,19 +13,23 @@ body {
     height: 100vh;
 }
 
-nav .branding a {
-    color: beige;
+.brand-logo {
+    font-size: 25px;
+    font-weight: 700;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
-    font-weight: bold;
-    font-size: x-large;
+    color: antiquewhite;
 }
 
-ul li:nth-child(odd) a {
-    text-decoration: none;
-    color: beige;
-    font-weight: 500;
+.login {
     font-size: 20px;
-    border: 2px solid rgb(116, 117, 187);
-    padding: 5px 20px 10px;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    color: antiquewhite;
+    border: 4px solid rgb(67, 82, 121);
+    padding: 5px 20px;
     border-radius: 10px;
+}
+
+.login:hover {
+    background-color: rgb(41, 52, 83);
 }
