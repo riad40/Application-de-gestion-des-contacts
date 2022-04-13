@@ -12,15 +12,11 @@
     
     <!-- IDEA : header & navbar  -->
 
-    <header class="w-full bg-gray-800">
-      <nav class="flex flex-col md:flex-row justify-between items-center w-full xl:w-3/4 mx-auto py-5 px-6 xl:px-0">
-          <a href="index.html" class="brand-logo">Contact Management</a>
-          <div class="flex items-center my-4 md:my-4"> 
-            <a href="display.html" class="mx-3 nav-links">Contacts List</a>
-            <a href="logout.php" class="mx-3 nav-links">Log out</a>
-          </div>
-      </nav>
-    </header> 
+    <?php
+
+      include 'includes/navBar.php';
+
+    ?>
 
     <!-- IDEA : main profile  -->
 
@@ -46,12 +42,12 @@
             </div>
             <div class="info_data">
               <div class="data">
-                <h4 class="data_title">City</h4>
-                <p class="data_answer">NewYork</p>
+                <h4 class="data_title">SignUp Date</h4>
+                <p class="data_answer">00 : 00 00-00-0000</p>
               </div>
               <div class="data">
-                <h4 class="data_title">Date of Birth</h4>
-                <p class="data_answer">00-00-0000</p>
+                <h4 class="data_title">Last LogIn</h4>
+                <p class="data_answer">00 : 00 00-00-0000</p>
               </div>
             </div>
           </div>

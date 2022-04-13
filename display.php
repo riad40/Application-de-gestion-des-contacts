@@ -12,15 +12,11 @@
 
     <!-- IDEA : header & navbar  -->
 
-    <header class="w-full bg-gray-800">
-      <nav class="flex flex-col md:flex-row justify-between items-center w-full xl:w-3/4 mx-auto py-5 px-6 xl:px-0">
-          <a href="index.html" class="brand-logo">Contact Management</a>
-          <div class="flex items-center my-4 md:my-4"> 
-            <a href="profile.html" class="mx-3 nav-links">My Profile</a>
-            <a href="logout.php" class="mx-3 nav-links">Log out</a>
-          </div>
-      </nav>
-    </header> 
+    <?php
+
+      include 'includes/navBar.php';
+
+    ?>
 
     <!-- IDEA : main section  -->
 

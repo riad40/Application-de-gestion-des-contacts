@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<php lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +13,8 @@
 
     <header class="w-full bg-gray-800">
         <nav class="flex flex-col sm:flex-row sm:justify-between items-center w-3/4 mx-auto py-5">
-          <a href="index.html" class="brand-logo">Contact Management</a>
-          <a href="signIn.html" class="login my-3 sm:my-0">Log In</a>
+          <a href="index.php" class="brand-logo">Contact Management</a>
+          <a href="signIn.php" class="login my-3 sm:my-0">Log In</a>
         </nav>
     </header>
 
@@ -30,10 +30,10 @@
           <span class="font-semibold text-white">Get Started now</span>
         </p>
         <div class="flex justify-center">
-          <a href="signUp.html" class="login">Get Started</a>
+          <a href="signUp.php" class="login">Get Started</a>
         </div>
       </div>
     </section>
 
   </body>
-</html>
+</php>
