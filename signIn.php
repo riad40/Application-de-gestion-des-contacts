@@ -17,13 +17,17 @@
         <h1 class="block py-4 text-white text-2xl font-400 text-center">Sign In</h1>
 
         <form action="includes/login.php" method="post" id="loginForm">
+
           <label for="email" class="font-medium">Enter Your Email</label>
           <input type="email" name="email" id="email" placeholder="example@gmail.com" class="block mt-4 mb-1 p-3 w-full">
           <div id="emailErrors" class="text-red-500 mb-4"></div>
+
           <label for="password" class="font-medium">Enter Your Password</label>
           <input type="password" name="pwd" id="pwd" placeholder="example123" class="block mt-4 mb-1 p-3 w-full">
           <div id="pwdErrors" class="text-red-500 mb-4"></div>
-          <input type="submit" value="Sign In" class="block my-5 text-dark font-medium cursor-pointer">
+
+          <input type="submit" name="login" value="Sign In" class="block my-5 text-dark font-medium cursor-pointer">
+          
         </form>
 
         <ul class="flex items-center w-full py-3">

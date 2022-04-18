@@ -34,7 +34,7 @@
           <input type="password" name="Rpwd" id="Rpwd" placeholder="example123" class="block mt-4 mb-1 p-3 w-full">
           <div id="RpwdErrors" class="text-red-500 mb-4"></div>
 
-          <input type="submit" value="Sign Up" class="block my-5 text-dark font-medium cursor-pointer">
+          <input type="submit" name="register" value="Sign Up" class="block my-5 text-dark font-medium cursor-pointer">
         </form>
 
         <ul class="flex items-center w-full py-3">
