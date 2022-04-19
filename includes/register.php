@@ -4,8 +4,8 @@
 
         $name = $_POST['fname'];
         $email = $_POST['email'];
-        $password = $_POST['pwd'];
-        $passwordRepeat = $_POST['Rpwd'];
+        $password = md5($_POST['pwd']);
+        $passwordRepeat = md5($_POST['Rpwd']);
         $registerDate = date('Y-m-d H:i:s');
 
         include '../classes/user.php';
@@ -15,4 +15,3 @@
         header("location: ../signIn.php?error=none");
 
     }
-    

@@ -10,116 +10,78 @@
         private $passwordRepeat;
         private $registerDate;
 
-        /* ============================= method for create up user  ============================= */
-
         // create user method
 
         public function createUser($fname, $email, $password, $registerDate) {
             
-            if($this->emptyInputs()) {
+            if(!empty($this->fname) || !empty($this->email) || !empty($this->password) || !empty($this->passwordRepeat)) {
                 // echo 'empty inputs';
                 header("location: ../signUp.php?error=emptyInputs");
                 exit();
             }
-
-            if($this->invalidEmail()) {
+            if(filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
                 // echo 'invalid email';
                 header("location: ../signUp.php?error=invalidEmail");
                 exit();
             }
-
-            if($this->passwordMatch() == false) {
+            if($this->password !== $this->passwordRepeat) {
                 // echo "passwords dosen't match";
                 header("location: ../signUp.php?error=passwordsDosentMache");
                 exit();
             }
-
-            if($this->emailExist($this->email)) {
-                // echo "email is alredy exist";
-                header("location: ../signUp.php?error=emailExist");
-                exit();
-            }
-
+            // if($this->checkUser($this->email) == true){
+            //     header('location: ../signUp.php?error=emailAlreadyExists');
+            //     exit();
+            // }
             // insert user to database
-
             $sql = "INSERT INTO users VALUES (NULL, ?, ?, ?, ?);";
             $stmt = $this->connect()->prepare($sql);
-            
-            $hashPassword = password_hash($password, PASSWORD_DEFAULT);
-
-            if (!$stmt->execute([$fname, $email, $hashPassword, $registerDate])) {
-                $stmt = null;
-                header("location: ../signUp.php?error=stmtFailed");
-                exit();
-            }
+            $stmt->execute([$fname, $email, $password, $registerDate]);
         }
-
-        // checks if the user fill all the filds
-
-        private function emptyInputs() { //true if empty else false
-            return (!empty($this->fname) || !empty($this->email) || !empty($this->password) || !empty($this->passwordRepeat));
-        } 
-
-        // check email format
-
-        private function invalidEmail() {
-            return (filter_var($this->email, FILTER_VALIDATE_EMAIL));
-        } 
-
-        // check passwords match 
-
-        private function passwordMatch() {
-            $result;
-            if ($this->password !== $this->passwordRepeat) {
-                $result = false;
-            } else {
-                $result = true;
-            }
-            return $result;
-        }
-
-        // check if email is already exist 
-
-        private function emailExist($email) {
-
-            $sql = "SELECT email FROM users WHERE email = ?;";
-            $stmt = $this->connect()->prepare($sql);
-            if (!$stmt->execute([$email])) {
-                $stmt = null;
-                header("location: ../signUp.php?error=stmtFailed");
-                exit();
-            }
-            if ($stmt->rowCount() > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        }
+        // private function checkUser($email) {
+        //     $sql = 'SELECT email FROM users WHERE email = ?;';
+        //     $stmt = $this->connect()->prepare($sql);
+        //     $stmt->execute([$email]);
+        //     if ($stmt->rowCount() > 0){
+        //         $resultCheck = false;
+        //     } else {
+        //         $resultCheck = true;
+        //     }
+        //     return $resultCheck;
+        // }
 
         // methods for login in user
-
-        // checks if the user fill all the filds
-
-        public function loginUser($email, $password) {
-            
-            if($this->emptyLogInInputs()) {
+        public function loginUser($email, $password) { 
+            if(!empty($this->email) || !empty($this->password)) {
                 // echo 'empty inputs';
                 header("location: ../signUp.php?error=emptyInputs");
                 exit();
             }
+            // log in user 
+            $sql = "SELECT * FROM users WHERE email = ? AND password = ?;";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$email, $password]);
 
-            // log in user code
+            if ($stmt->rowCount() > 0) {
+
+                $user = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+                session_start();
+                $_SESSION['id'] = $user[0]['userID'];
+                $_SESSION['fname'] = $user[0]['full_name'];
+                $_SESSION['email'] = $user[0]['email'];
+                $_SESSION['signUp_date'] = $user[0]['sign_up'];
+                $_SESSION['last_login'] = date('Y-m-d H:i:s');
+
+            } else {
+                $stmt = null;
+                header("location: ../signIn.php?error=userNotFound");
+                exit();
+            }
         }
 
-        private function emptyLogInInputs() {//true if empty else false
-            return (!empty($this->email) || !empty($this->password));
-        } 
-
-
-
-
-
- 
+        // log out
+        public function logout() {
+            session_start();
+            session_destroy();
+        }
     }
-
-    
