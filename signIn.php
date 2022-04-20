@@ -20,16 +20,28 @@
 
           <label for="email" class="font-medium">Enter Your Email</label>
           <input type="email" name="email" id="email" placeholder="example@gmail.com" class="block mt-4 mb-1 p-3 w-full">
-          <div id="emailErrors" class="text-red-500 mb-4"></div>
+          <div id="emailErrors" class="text-red-300 font-mono mb-4"></div>
 
           <label for="password" class="font-medium">Enter Your Password</label>
           <input type="password" name="pwd" id="pwd" placeholder="example123" class="block mt-4 mb-1 p-3 w-full">
-          <div id="pwdErrors" class="text-red-500 mb-4"></div>
+          <div id="pwdErrors" class="text-red-300 font-mono mb-4"></div>
 
           <input type="submit" name="login" value="Sign In" class="block my-5 text-dark font-medium cursor-pointer">
-          
         </form>
+        <?php
+          if (isset($_GET["error"])) {
 
+            if ($_GET["error"] == "emptyInputs") {
+              echo '<div class="text-red-300 text-center font-mono">Fill all the fields</div>';
+            }
+            else if ($_GET["error"] == "wrongLogin") {
+              echo '<div class="text-red-300 text-center font-mono">Incorrect credentials</div>';
+            }
+            else if ($_GET["error"] == "none") {
+              echo '<div class="text-green-700 text-center font-mono">Account created successflly !!! <br/> <span>use your credentials to log in to your account</span> </div>';
+            }
+          }
+      ?>
         <ul class="flex items-center w-full py-3">
           <li class="child1"></li>
           <li class="child2 font-medium">or</li>

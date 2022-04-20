@@ -20,23 +20,39 @@
 
           <label for="fname" class="font-medium">Enter Your full name</label>
           <input type="text" name="fname" id="fname" placeholder="Jhon Doe" class="block mt-4 mb-1 p-3 w-full">
-          <div id="fnameErrors" class="text-red-500 mb-4"></div>
+          <div id="fnameErrors" class="text-red-300 font-mono mb-4"></div>
 
           <label for="email" class="font-medium">Enter Your Email</label>
           <input type="email" name="email" id="email" placeholder="example@gmail.com" class="block mt-4 mb-1 p-3 w-full">
-          <div id="emailErrors" class="text-red-500 mb-4"></div>
+          <div id="emailErrors" class="text-red-300 font-mono mb-4"></div>
 
           <label for="password" class="font-medium">Enter Your Password</label>
           <input type="password" name="pwd" id="pwd" placeholder="example123" class="block mt-4 mb-1 p-3 w-full">
-          <div id="pwdErrors" class="text-red-500 mb-4"></div>
+          <div id="pwdErrors" class="text-red-300 font-mono mb-4"></div>
 
           <label for="Rpassword" class="font-medium">Confirm Your Password</label>
           <input type="password" name="Rpwd" id="Rpwd" placeholder="example123" class="block mt-4 mb-1 p-3 w-full">
-          <div id="RpwdErrors" class="text-red-500 mb-4"></div>
+          <div id="RpwdErrors" class="text-red-300 font-mono mb-4"></div>
 
           <input type="submit" name="register" value="Sign Up" class="block my-5 text-dark font-medium cursor-pointer">
         </form>
+        <?php
+          if (isset($_GET["error"])) {
 
+            if ($_GET["error"] == "emptyInputs") {
+              echo '<div class="text-red-300 text-center font-mono">Fill all the fields</div>';
+            }
+            else if ($_GET["error"] == "invalidEmail") {
+              echo '<div class="text-red-300 text-center font-mono">Invalid email format</div>';
+            }
+            else if ($_GET["error"] == "passwordsDosentMache") {
+              echo '<div class="text-red-300 text-center font-mono">Passwords must be the same</div>';
+            }
+            else if ($_GET["error"] == "emailAlreadyExist") {
+              echo '<div class="text-red-300 text-center font-mono">This email is already exist</div>';
+            }
+          }
+        ?>
         <ul class="flex items-center w-full py-3">
           <li class="child1"></li>
           <li class="child2 font-medium">or</li>

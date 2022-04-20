@@ -11,7 +11,7 @@
         include '../classes/user.php';
         
         $user = new User();
-        $user -> createUser($name, $email, $password, $registerDate);
+        $user -> createUser($name, $email, $password, $registerDate,$passwordRepeat);
         header("location: ../signIn.php?error=none");
 
     }
