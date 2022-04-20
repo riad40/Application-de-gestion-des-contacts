@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/display&profile.css">
     <script src="js/js styling/displayStyle.js" defer></script>
+    <script src="js/add.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Dsiplay Contacts</title>
   </head>
@@ -34,7 +35,7 @@
         <h1 class="top-h1">Contacts List</h1>
         <button class="top-button" type="button" id="add-btn">add contact</button>
         <div class="absolute inset-0 hidden justify-center items-center" id="model">
-          <div class="bg-gray-700 w-2/4 py-2 px-3 rounded shadow-xl text-gray-300">
+          <div class="bg-gray-700 w-2/5 max-w-xl min-w-xs py-2 px-3 rounded shadow-xl text-gray-300">
               <div class="flex justify-between items-center">
                   <h4 class="text-lg px-4 pt-4 font-bold">Add new contact</h4>
                   <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="close-modal" fill="currentColor" viewBox="0 0 20 20">
@@ -43,23 +44,27 @@
                         clip-rule="evenodd"></path>
                     </svg>
               </div>
-              <form action="includes/add.php" method="post" class="mx-5">
+              <form action="includes/add.php" method="post" class="mx-5" id="addForm">
                   <input type="hidden" name="id" id="userID" value="<?php echo $_SESSION['id'] ?>">
                   <div>
                       <label for="fname" class="block mt-8 mb-3 text-sm font-medium text-gray-300 dark:text-gray-300">Full Name</label>
-                      <input type="text" name="fname" id="fname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <input type="text" name="fname" id="fname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none">
+                      <div id="fnameErrors" class="block text-red-300 font-mono mb-4"></div>
                   </div>
                   <div>
                       <label for="email" class="block mt-4 mb-3 text-sm font-medium text-gray-300 dark:text-gray-300">Email Adresse</label>
-                      <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none ">
+                      <div id="emailErrors" class="block text-red-300 font-mono mb-4"></div>
                   </div>
                   <div>
                       <label for="phone" class="block mt-4 mb-3 text-sm font-medium text-gray-300 dark:text-gray-300">Phone Number</label>
-                      <input type="number" name="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <input type="number" name="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none ">
+                      <div id="phoneErrors" class="block text-red-300 font-mono mb-4"></div>
                   </div>
                   <div>
                       <label for="city" class="block mt-4 mb-3 text-sm font-medium text-gray-300 dark:text-gray-300">City</label>
-                      <input type="text" name="city" id="city" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <input type="text" name="city" id="city" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none ">
+                      <div id="cityErrors" class="block text-red-300 font-mono mb-4"></div>
                   </div>
                   <div>
                       <input type="submit" name="add" id="add" value="Add Contact" class="my-4 text-white bg-blue-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
@@ -69,7 +74,6 @@
         </div>
       </div>
       <?php
-
         include 'classes/contact.php';
         $userID = $_SESSION['id'];
         $contact = new Contact();
@@ -127,21 +131,5 @@
         </table>
       </div>
     </section>
-    <script>
-      window.addEventListener('DOMContentLoaded', () =>{
-        const model = document.querySelector('#model')
-        const addBtn = document.querySelector('#add-btn')
-        const closeBtn = document.querySelector('#close-modal')
-
-        const toggleModal = () => {
-            model.classList.toggle('hidden')
-            model.classList.toggle('flex')
-        }
-
-        addBtn.addEventListener('click', toggleModal)
-
-        closeBtn.addEventListener('click', toggleModal)
-      })
-    </script>
   </body>
 </html>

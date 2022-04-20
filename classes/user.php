@@ -51,9 +51,9 @@
         public function loginUser($email, $password) { 
             $this->email = $email;
             $this->password = $password;
-            if(!empty($this->email) || !empty($this->password)) {
+            if(empty($this->email) || empty($this->password)) {
                 // echo 'empty inputs';
-                header("location: ../signUp.php?error=emptyInputs");
+                header("location: ../signIn.php?error=emptyInputs");
                 exit();
             }
             // log in user 
