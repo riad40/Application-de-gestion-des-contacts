@@ -15,7 +15,7 @@ const pwdErrors = document.querySelector('#pwdErrors')
 
 form.addEventListener('submit', e => {
     let errors = 0
-    let pattern = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
+    let pattern = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]{2,})+$/
     if (email.value == '') {
         emailErrors.textContent = 'Email is required'
         email.classList.add('validate')
